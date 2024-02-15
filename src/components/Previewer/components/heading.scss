@@ -1,0 +1,15 @@
+@for $level from 1 through 6 {
+  @if ($level < 3) {
+    h#{$level} {
+      border-bottom: 3px solid $grey;
+    }
+  }
+  h#{$level} {
+    padding-bottom: 5px;
+    margin-block: 20px 10px;
+    font-size: 32px - $level * 5;
+  }
+}
+.heading-link {
+  color: inherit;
+}

@@ -1,0 +1,17 @@
+@use '../../sass/variables' as *;
+@use '../../sass/mixins' as *;
+
+.main-container {
+  @include flex-row(30px);
+  align-items: flex-end;
+  padding-inline: 30px;
+  max-width: $max-width;
+  margin-inline: auto;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 10px;
+    max-width: auto;
+    margin-inline: unset;
+  }
+}

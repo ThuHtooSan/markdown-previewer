@@ -1,0 +1,42 @@
+@use '../../sass/variables' as *;
+@use '../../sass/mixins' as *;
+
+.option-container {
+  @include flex-row();
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 7px;
+
+  .flavor {
+    background: none;
+    border: none;
+    font-size: 0.9em;
+    color: $black;
+  }
+
+  .options {
+    @include flex-row(4px);
+
+    .option {
+      width: 25px;
+      height: 25px;
+      border-radius: 4px;
+      box-shadow: $box-shadow;
+      font-size: 0.8em;
+      background: $beige;
+      color: $primary;
+
+      &:hover {
+        background: $secondary;
+      }
+
+      &.upload {
+        @include flex-row-center;
+
+        input[type='file'] {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '../../sass/variables' as *;
+@use '../../sass/mixins' as *;
+@use '../../sass/maps' as *;
+@use '../../sass/functions' as *;
+
+.preview-container {
+  flex: 1;
+  height: 70vh;
+  background: $beige;
+  overflow: scroll;
+  border-radius: $border-radius;
+  padding: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+    flex: auto;
+  }
+
+  // ====================
+  // Block-Level Elements
+  // ====================
+
+  // headings
+  @import 'components/heading';
+
+  // lists
+  @import 'components/list';
+
+  // codes
+  @import 'components/code';
+
+  // tables
+  @import 'components/table';
+
+  // blockquotes
+  @import 'components/blockquote';
+
+  // alerts
+  @import 'components/alert';
+
+  // footnotes
+  @import 'components/footnote';
+
+  // images
+  @import 'components/image.scss';
+
+  // =====================
+  // Inline-Level Elements
+  // =====================
+
+  // links
+  @import 'components/link';
+
+  // paragraphs
+  @import 'components/paragraphs';
+
+  // emojis
+  @import 'components/emoji';
+
+  // line breaks
+  @import 'components/line-break';
+}

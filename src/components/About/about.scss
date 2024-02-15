@@ -1,0 +1,100 @@
+@use '../../sass/variables.scss' as *;
+@use '../../sass/mixins.scss' as *;
+
+.about-controller {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  background: $bg;
+  backdrop-filter: $blur;
+  box-shadow: $box-shadow;
+  border-radius: 0 0 50% 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  @include flex-row-center;
+  color: darken($primary, 5%);
+  z-index: 2;
+  transition: $transition-duration;
+
+  &:hover {
+    background: $secondary;
+  }
+}
+
+.about-container {
+  @include modal-container(rgba(0, 0, 0, 0.2));
+  z-index: 99;
+
+  .about {
+    @include modal-center($primary, 8px);
+    background: $beige;
+    backdrop-filter: none;
+    max-width: 350px;
+    color: $black;
+    padding: 20px !important;
+
+    a {
+      text-decoration: none;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .link-opener-blank {
+      font-size: 0.8rem;
+    }
+
+    .dismiss-about {
+      @include modal-dismiss-btn(
+        right,
+        darken($primary, 10%),
+        darken($primary, 30%)
+      );
+      padding: 0;
+      top: 10px;
+      right: 15px;
+      color: $primary;
+    }
+
+    .separator {
+      width: 50px;
+      height: 2px;
+      border-radius: 20px;
+      box-shadow: $box-shadow;
+      background: grey;
+      margin: 10px auto;
+    }
+
+    .tech-stack {
+      @include flex-col(5px);
+
+      .title {
+        font-size: 1rem;
+      }
+
+      .technologies {
+        @include flex-row-center(10px);
+        flex-wrap: wrap;
+
+        li {
+          @include flex-row(5px);
+          padding: 5px 10px;
+          background: darken($primary, 5%);
+          color: $white;
+          border-radius: $border-radius;
+          box-shadow: $box-shadow;
+          cursor: grab;
+
+          img {
+            width: 18px;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}

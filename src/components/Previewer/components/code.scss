@@ -1,0 +1,32 @@
+.code-container {
+  position: relative;
+  background: $grey;
+  padding-right: 32px;
+  margin-block: 10px;
+  border-radius: $border-radius;
+
+  .block-code {
+    display: block;
+    padding: 10px 0 10px 15px;
+    overflow-y: scroll;
+  }
+
+  .copy-code {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: $grey;
+    @include flex-row-center;
+
+    .icon {
+      height: 1.1em;
+    }
+  }
+}
+// inline codes
+.inline-code {
+  background: $grey;
+  border-radius: 4px;
+  padding: 4px;
+  font-family: monospace;
+}

@@ -1,0 +1,22 @@
+table {
+  border: 2px solid $grey;
+  border-collapse: collapse;
+
+  thead th {
+    padding: 5px 7px;
+    text-align: center;
+    border-right: 2px solid $grey;
+    border-bottom: 2px solid $grey;
+  }
+
+  tbody td {
+    padding: 5px 7px;
+    border: 2px solid $grey;
+    font-size: 0.95em;
+  }
+
+  th,
+  td {
+    word-break: break-word;
+  }
+}

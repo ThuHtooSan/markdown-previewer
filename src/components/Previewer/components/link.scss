@@ -1,0 +1,19 @@
+a {
+  // underline links
+  // which do not contain an img or badge
+  &:not(:has(> img)) {
+    text-decoration: none;
+    color: darken($primary, 20%);
+    border-bottom: 3px solid $primary;
+    transition: $transition-duration;
+
+    &:hover {
+      border-bottom: 3px solid $secondary;
+    }
+  }
+
+  // else
+  &:has(> img) {
+    margin-right: 5px;
+  }
+}

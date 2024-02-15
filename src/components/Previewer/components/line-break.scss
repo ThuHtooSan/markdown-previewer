@@ -1,0 +1,9 @@
+br:has(+ a) {
+  display: none;
+}
+hr {
+  border: none;
+  height: 0;
+  border-bottom: 3px solid $grey;
+  margin-block: 20px;
+}

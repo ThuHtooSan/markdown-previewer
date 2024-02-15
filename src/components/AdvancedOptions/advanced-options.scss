@@ -1,0 +1,90 @@
+@use '../../sass/variables.scss' as *;
+@use '../../sass/mixins.scss' as *;
+
+.advanced-options-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include modal-container(rgba(0, 0, 0, 0.2));
+  z-index: 99;
+  transition: none;
+
+  .advanced-options {
+    @include flex-col(10px);
+    padding: 20px;
+    background: $primary;
+    color: $black;
+    border-radius: $border-radius;
+    width: 250px;
+    box-shadow: $box-shadow;
+
+    .title {
+      text-align: center;
+      @include flex-row-center;
+      padding: 0 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .option {
+      @include flex-row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .option-name {
+        @include flex-col();
+
+        .option-description {
+          font-size: 0.7em;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 110px;
+        padding: 5px 10px;
+        border-radius: $pill-border;
+        border: none;
+        background: $secondary;
+        outline: 2px solid transparent;
+        transition: $transition-duration;
+
+        &:focus {
+          outline: 2px solid darken($primary, 10%);
+        }
+      }
+
+      .button {
+        border-radius: $pill-border;
+        width: 30px;
+        padding: 8px 13px;
+        position: relative;
+        box-shadow: $box-shadow;
+        border: none;
+        background: $white;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 1.4px;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          transition: $transition-duration;
+        }
+
+        &.on:after {
+          left: calc(100% - 14px);
+          background: $primary;
+        }
+
+        &.off:after {
+          left: 2px;
+          background: $grey;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.markdown-alert {
+  background: $white;
+  @include flex-col();
+  margin-block: 15px;
+  border-radius: $border-radius;
+  padding: 7px 15px;
+
+  @each $type, $color in $markdown-alert {
+    &-#{$type} {
+      background: $color;
+      color: adaptive-text($color);
+
+      svg {
+        fill: adaptive-text($color);
+      }
+    }
+  }
+
+  .markdown-alert-title {
+    @include flex-row(5px);
+    justify-content: flex-start;
+  }
+}
