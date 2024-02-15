@@ -7,11 +7,12 @@ type Data = Omit<InitialState, 'html'>;
 const useLoadData = () => {
   const dispatch = useAppDispatch();
   const dataString = localStorage.getItem('data');
-  if (!dataString) return;
 
-  const data: Data = JSON.parse(dataString);
+  const data: Data = JSON.parse(dataString || '{}');
 
   useEffect(() => {
+    if (!dataString) return;
+
     dispatch(loadData(data));
     dispatch(parseMarkdown(data.markdown));
   }, []);
