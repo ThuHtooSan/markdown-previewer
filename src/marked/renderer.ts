@@ -15,8 +15,8 @@ export const basicRenderer: MarkedExtension['renderer'] = {
   },
 
   // highlight codeblocks and add copy-to-clipboard icon
-  code(code, lang, _) {
-    const language = lang || 'plaintext';
+  code(code, lang = '', _) {
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
     const highlightedCode = hljs.highlight(code, { language }).value;
 
     return `
